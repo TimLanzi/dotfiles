@@ -1,0 +1,205 @@
+{
+	"Typescript React Function Component": {
+		"prefix": "rc",
+		"body": [
+			"import React from \"react\"",
+			"",
+			"type ${1:$TM_FILENAME_BASE}Props = {",
+			"\t$2",
+			"}",
+			"",
+			"export function ${1:$TM_FILENAME_BASE}({}: ${1:$TM_FILENAME_BASE}Props) {",
+			"\treturn ($0);",
+			"}"
+		]
+	},
+	"Typescript React Function Component Default Export": {
+		"prefix": "rcd",
+		"body": [
+			"import React from \"react\"",
+			"",
+			"type ${1:$TM_FILENAME_BASE}Props = {",
+			"\t$2",
+			"}",
+			"",
+			"export default function ${1:$TM_FILENAME_BASE}({}: ${1:$TM_FILENAME_BASE}Props) {",
+			"\treturn ($0);",
+			"}"
+		]
+	},
+	"Typescript React Client Function Component": {
+		"prefix": "rcc",
+		"body": [
+			"\"use client\"",
+			"",
+			"import React from \"react\"",
+			"",
+			"type ${1:$TM_FILENAME_BASE}Props = {",
+			"\t$2",
+			"}",
+			"",
+			"export function ${1:$TM_FILENAME_BASE}({}: ${1:$TM_FILENAME_BASE}Props) {",
+			"\treturn ($0);",
+			"}"
+		]
+	},
+	"Typescript React Client Function Component Default Export": {
+		"prefix": "rccd",
+		"body": [
+			"\"use client\"",
+			"",
+			"import React from \"react\"",
+			"",
+			"type ${1:$TM_FILENAME_BASE}Props = {",
+			"\t$2",
+			"}",
+			"",
+			"export default function ${1:$TM_FILENAME_BASE}({}: ${1:$TM_FILENAME_BASE}Props) {",
+			"\treturn ($0);",
+			"}"
+		]
+	},
+	"Typescript Next.js Page": {
+		"prefix": "np",
+		"body": [
+			"import React from \"react\"",
+			"",
+			"export default function ${TM_DIRECTORY/^.*\\/(.*)\\/(.*)$/${2:/pascalcase}/}Page() {",
+			"\treturn ($0);",
+			"}"
+		]
+	},
+	"Typescript Next.js Page with Params": {
+		"prefix": "npp",
+		"body": [
+			"import React from \"react\"",
+			"",
+			"type Props = {",
+			"\tparams: {",
+			"\t\t$1",
+			"\t}",
+			"}",
+			"",
+			"export default function ${TM_DIRECTORY/^.*\\/(.*)\\/(.*)$/${2:/pascalcase}/}Page() {",
+			"\treturn ($0);",
+			"}"
+		]
+	},
+
+	"Typescript Next.js Root Layout": {
+		"prefix": "nrl",
+		"body": [
+			"import React from \"react\"",
+			"",
+			"export default function RootLayout({",
+			"\tchildren,",
+			"}: {",
+			"\tchildren: React.ReactNode",
+			"}) {",
+			"\treturn (",
+			"\t\t<html lang=\"en\">",
+			"\t\t\t<body>",
+			"\t\t\t\t$0",
+			"\t\t\t</body>",
+			"\t\t</html>",
+			"\t)",
+			"}"
+		]
+	},
+	
+	"Typescript Next.js Layout": {
+		"prefix": "nl",
+		"body": [
+			"import React from \"react\"",
+			"",
+			"export default function $1Layout({",
+			"\tchildren,",
+			"}: {",
+			"\tchildren: React.ReactNode",
+			"}) {",
+			"\treturn ($0)",
+			"}"
+		]
+	},
+	
+	"Typescript Next.js Layout with Params": {
+		"prefix": "nlp",
+		"body": [
+			"import React from \"react\"",
+			"",
+			"type Props = {",
+			"\tchildren: React.ReactNode",
+			"\tparams: {",
+			"\t\t$1",
+			"\t}",
+			"}",
+			"",
+			"export default function $2Layout({",
+			"\tchildren,",
+			"\tparams,",
+			"}: Props) {",
+			"\treturn ($0)",
+			"}"
+		]
+	},
+
+	"Shadcn React Hook Form Zod Resolver Client Component": {
+		"prefix": "rhfsz",
+		"body": [
+			"\"use client\";",
+			"",
+			"import React from \"react\";",
+			"import { zodResolver } from \"@hookform/resolvers/zod\";",
+			"import { useForm } from \"react-hook-form\";",
+			"import type { z } from \"zod\";",
+			"",
+			"import { Button } from \"~/components/ui/button\";",
+			"import {",
+			"\tForm,",
+			"\tFormControl,",
+			"\tFormField,",
+			"\tFormItem,",
+			"\tFormLabel,",
+			"\tFormMessage,",
+			"} from \"~/components/ui/form\";",
+			"import { Input } from \"~/components/ui/input\";",
+			"",
+			"type ${1:$TM_FILENAME_BASE}FormProps = {$0};",
+			"",
+			"export default function ${1:$TM_FILENAME_BASE}({}: ${1:$TM_FILENAME_BASE}FormProps) {",
+			"\tconst form = useForm<z.infer<typeof ${2:zodSchema}>>({",
+			"\t\tresolver: zodResolver(${2:zodSchema}),",
+			"\t\tdefaultValues: {},",
+			"\t});",
+			"",
+			"\tfunction onSubmit(data: z.infer<typeof ${2:zodSchema}>) {",
+			"\t\tconsole.log(data);",
+			"\t}",
+			"",
+			"\treturn (",
+			"\t\t<Form {...form}>",
+			"\t\t\t<form className=\"space-y-4\" onSubmit={form.handleSubmit(onSubmit)}>",
+			"\t\t\t\t<FormField",
+			"\t\t\t\t\tcontrol={form.control}",
+			"\t\t\t\t\tname=\"name\"",
+			"\t\t\t\t\trender={({ field }) => (",
+			"\t\t\t\t\t\t<FormItem>",
+			"\t\t\t\t\t\t\t<FormLabel>Name</FormLabel>",
+			"\t\t\t\t\t\t\t<FormControl>",
+			"\t\t\t\t\t\t\t\t<Input {...field} />",
+			"\t\t\t\t\t\t\t</FormControl>",
+			"\t\t\t\t\t\t\t<FormMessage />",
+			"\t\t\t\t\t\t</FormItem>",
+			"\t\t\t\t\t)}",
+			"\t\t\t\t/>",
+			"",
+			"\t\t\t\t<Button type=\"submit\" className=\"w-full\">",
+			"\t\t\t\t\tSubmit",
+			"\t\t\t\t</Button>",
+			"\t\t\t</form>",
+			"\t\t</Form>",
+			"\t);",
+			"}"
+		]
+	}
+}

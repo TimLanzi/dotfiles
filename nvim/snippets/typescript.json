@@ -1,0 +1,108 @@
+{
+	"Payload Collection": {
+		"prefix": "plc",
+		"body": [
+			"import { CollectionConfig } from \"payload/types\";",
+			"",
+			"const ${TM_FILENAME_BASE}: CollectionConfig = {",
+			"  slug: \"${TM_FILENAME_BASE/(.*)/${1:/downcase}/}\",",
+			"  timestamps: true,",
+			"  admin: {",
+			"    useAsTitle: \"name\",",
+			"  },",
+			"  access: {",
+			"    read: () => true,",
+			"  },",
+			"  fields: [",
+			"    {",
+			"      name: \"name\",",
+			"      label: \"Name\",",
+			"      type: \"text\",",
+			"      required: true,",
+			"    },",
+			"    $0",
+			"  ]",
+			"};",
+			"",
+			"export default ${TM_FILENAME_BASE};"
+		]
+	},
+	
+	"Payload Collection w/ Drafts": {
+		"prefix": "plcd",
+		"body": [
+			"import { CollectionConfig } from \"payload/types\";",
+			"",
+			"const ${TM_FILENAME_BASE}: CollectionConfig = {",
+			"  slug: \"${TM_FILENAME_BASE/(.*)/${1:/downcase}/}\",",
+			"  timestamps: true,",
+			"  admin: {",
+			"    useAsTitle: \"name\",",
+			"  },",
+			"versions: {",
+			"  drafts: true,",
+			"},",
+			"  access: {",
+			"    read: () => true,",
+			"  },",
+			"  fields: [",
+			"    {",
+			"      name: \"name\",",
+			"      label: \"Name\",",
+			"      type: \"text\",",
+			"      required: true,",
+			"    },",
+			"    $0",
+			"  ]",
+			"};",
+			"",
+			"export default ${TM_FILENAME_BASE};"
+		]
+	},
+
+	"Payload Block": {
+		"prefix": "plb",
+		"body": [
+			"import { Block } from \"payload/types\";",
+			"",
+			"const ${TM_FILENAME_BASE}: Block = {",
+			"  slug: \"${TM_FILENAME_BASE}\",",
+			"  fields: [",
+			"    $0",
+			"  ]",
+			"};",
+			"",
+			"export default ${TM_FILENAME_BASE};"
+		]
+	},
+
+	"Payload Global": {
+		"prefix": "plg",
+		"body": [
+			"import { GlobalConfig } from \"payload/types\";",
+			"",
+			"const ${TM_FILENAME_BASE}: GlobalConfig = {",
+			"  slug: \"${TM_FILENAME_BASE/(.*)/${1:/downcase}/}\",",
+			"  access: {",
+			"    read: () => true,",
+			"  },",
+			"  fields: [",
+			"    $0",
+			"  ]",
+			"};",
+			"",
+			"export default ${TM_FILENAME_BASE};"
+		]
+	},
+
+	"Zod Schema": {
+		"prefix": "z",
+		"body": [
+			"import { z } from \"zod\";",
+			"",
+			"export const ${1:$TM_FILENAME_BASE}Schema = z.object({",
+			"\t$0",
+			"});"
+		]
+	}
+}
