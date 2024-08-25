@@ -8,7 +8,7 @@ Based on [Dreams of Code's video](https://www.youtube.com/watch?v=DzNmUNvnB04)
 
 2. Install tpm
 ```bash
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugings/tpm
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 ```
 
