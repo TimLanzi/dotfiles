@@ -44,7 +44,8 @@ map("n", "<leader>oo", ":cd /home/tlanzi/Documents/Obsidian Vault<cr>")
 map("n", "<leader>on", ":ObsidianTemplate note<cr> :lua vim.cmd([[1,/^\\S/s/^\\n\\{1,}//]])<cr>")
 -- strip date from note title and replace dashes with spaces
 -- must have cursor on title
-map("n", "<leader>of", ":s/\\(# \\)[^_]*_/\\1/ | s/-/ /g<cr>")
+-- map("n", "<leader>of", ":s/\\(# \\)[^_]*_/\\1/ | s/-/ /g<cr>")
+map("n", "<leader>of", ":s/-/ /g<cr>")
 --
 -- search for files in full vault
 map("n", "<leader>os", "<cmd>Telescope find_files search_dirs={\"/home/tlanzi/Documents/Obsidian Vault/notes\"}<cr>")
