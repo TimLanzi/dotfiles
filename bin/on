@@ -5,7 +5,8 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
-file_name=$(echo "$1" | tr ' ' '-')
+# file_name=$(echo "$1" | tr ' ' '-')
+file_name=$(echo "$1")
 formatted_file_name=${file_name}.md
 cd "/home/tlanzi/Documents/Obsidian Vault" || exit
 touch "inbox/${formatted_file_name}"
