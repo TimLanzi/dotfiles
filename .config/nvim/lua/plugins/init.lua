@@ -1,5 +1,16 @@
 return {
   {
+    'nvim-telescope/telescope.nvim',
+    opts = {
+      pickers = {
+        find_files = {
+          hidden = true
+        }
+      }
+    }
+  },
+
+  {
     "stevearc/conform.nvim",
     -- event = 'BufWritePre', -- uncomment for format on save
     config = function()
