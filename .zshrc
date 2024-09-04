@@ -14,12 +14,16 @@ alias t=tmux
 
 # Obsidian
 alias oo='cd $HOME/Documents/Obsidian\ Vault'
+alias oov='cd $HOME/Documents/Obsidian\ Vault && vim'
 alias or='vim $HOME/Documents/Obsidian\ Vault/inbox/*.md'
 # alias ou='cd $HOME/notion-obsidian-sync-zazencodes && node batchUpload.js --lastmod-days-window 5'
 
 # Path shortcuts
 alias nvc='cd $HOME/.config/nvim && vim'
 alias dot='cd $HOME/dotfiles'
+
+# Source fzf (installed from source)
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Shell integrations
 eval "$(fzf --zsh)"
@@ -62,7 +66,9 @@ eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/config.toml)"
 # source $ZSH/oh-my-zsh.sh
 
 # Keybindings
+# Emacs mode
 bindkey -e
+# bindkey '^f' autosuggest-accept
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
@@ -96,3 +102,4 @@ esac
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
