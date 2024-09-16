@@ -21,3 +21,6 @@ _darcs
 ^/LICENSE.*
 ^/COPYING
 ### END DEFAULT CONFIG
+
+udevmon.yaml
+install.sh

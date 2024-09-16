@@ -48,8 +48,8 @@ map("n", "<leader>on", ":ObsidianTemplate note<cr> :lua vim.cmd([[1,/^\\S/s/^\\n
 map("n", "<leader>of", ":s/-/ /g<cr>")
 --
 -- search for files in full vault
-map("n", "<leader>os", "<cmd>Telescope find_files search_dirs={\"/home/tlanzi/Documents/Obsidian Vault/notes\"}<cr>")
-map("n", "<leader>oz", "<cmd>Telescope live_grep search_dirs={\"/home/tlanzi/Documents/Obsidian Vault/notes\"}<cr>")
+map("n", "<leader>os", "<cmd>Telescope find_files search_dirs={\"/home/tlanzi/Documents/Obsidian Vault/\"}<cr>")
+map("n", "<leader>oz", "<cmd>Telescope live_grep search_dirs={\"/home/tlanzi/Documents/Obsidian Vault/\"}<cr>")
 --
 -- search for files in notes (ignore zettelkasten)
 -- map("n", "<leader>ois", ":Telescope find_files search_dirs={\"/Users/alex/library/Mobile\\ Documents/iCloud~md~obsidian/Documents/ZazenCodes/notes\"}<cr>")

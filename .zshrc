@@ -63,7 +63,17 @@ eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/config.toml)"
 # ZSH_THEME="robbyrussell"
 # plugins=(git)
 # export ZSH="$HOME/.oh-my-zsh"
-# source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.share
+
+# provides ability to change current working directory when exiting yazi
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 
 # Keybindings
 # Emacs mode
@@ -102,4 +112,27 @@ esac
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+# bun completions
+[ -s "/home/tlanzi/.bun/_bun" ] && source "/home/tlanzi/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/tlanzi/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/tlanzi/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/tlanzi/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/tlanzi/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 
