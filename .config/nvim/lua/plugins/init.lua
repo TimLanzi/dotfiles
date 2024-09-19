@@ -71,7 +71,7 @@ return {
         "json",
         "jsdoc",
         "json5",
-        "latex",
+        -- "latex",
         "markdown",
         "markdown_inline",
         "nginx",

@@ -19,8 +19,8 @@ alias or='vim $HOME/Documents/Obsidian\ Vault/inbox/*.md'
 # alias ou='cd $HOME/notion-obsidian-sync-zazencodes && node batchUpload.js --lastmod-days-window 5'
 
 # Path shortcuts
-alias nvc='cd $HOME/.config/nvim && vim'
-alias dot='cd $HOME/dotfiles'
+alias nvc='cd $HOME/dotfiles/.config/nvim && vim'
+alias dot='cd $HOME/dotfiles && vim'
 
 # Source fzf (installed from source)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -74,6 +74,8 @@ function yy() {
 	fi
 	rm -f -- "$tmp"
 }
+
+alias yazi=yy
 
 # Keybindings
 # Emacs mode
