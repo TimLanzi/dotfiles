@@ -1,4 +1,5 @@
 require "nvchad.mappings"
+local harpoon = require("harpoon")
 
 -- add yours here
 
@@ -11,6 +12,20 @@ map("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>", { desc = "window down" })
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
+
+map("n", "<leader>a", function() harpoon:list():add() end)
+
+map("n", "<leader>1", function() harpoon:list():select(1) end)
+map("n", "<leader>2", function() harpoon:list():select(2) end)
+map("n", "<leader>3", function() harpoon:list():select(3) end)
+map("n", "<leader>4", function() harpoon:list():select(4) end)
+map("n", "<leader>5", function() harpoon:list():select(5) end)
+map("n", "<leader>6", function() harpoon:list():select(6) end)
+map("n", "<leader>7", function() harpoon:list():select(7) end)
+map("n", "<leader>8", function() harpoon:list():select(8) end)
+
+map("n", "<leader>p", function() harpoon:list():prev() end)
+map("n", "<leader>n", function() harpoon:list():next() end)
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 

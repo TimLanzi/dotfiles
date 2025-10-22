@@ -1,18 +1,17 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
-    opts = {
-      pickers = {
+    opts = function (_, conf)
+      conf.pickers = {
         find_files = {
           hidden = true,
-          file_ignore_patterns = { "node_modules", ".git", ".next", "build", "dist" },
+          no_ignore = true,
+          file_ignore_patterns = { ".git", "node_modules" }
         },
-        live_grep = {
-          hidden = true,
-          file_ignore_patterns = { "node_modules", ".git", ".next", "build", "dist" },
-        },
-      },
-    },
+      }
+
+      return conf
+    end
   },
 
   {
@@ -35,7 +34,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     config = function()
-      require("nvchad.configs.lspconfig").defaults()
+      -- require("nvchad.configs.lspconfig").defaults()
       require "configs.lspconfig"
     end,
   },

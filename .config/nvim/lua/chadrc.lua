@@ -4,14 +4,15 @@
 ---@type ChadrcConfig
 local M = {}
 
-M.ui = {
+M.base46 = {
   theme = "bearded-arc",
 
+}
   -- hl_override = {
   -- 	Comment = { italic = true },
   -- 	["@comment"] = { italic = true },
   -- },
-  nvdash = {
+  M.nvdash = {
     load_on_startup = true,
     header = {
       [[                                                                       ]],
@@ -25,7 +26,6 @@ M.ui = {
       [[ ██████  █████████████████████ ████ █████ █████ ████ ██████ ]],
       [[                                                                       ]],
     },
-  },
-}
+  }
 
 return M

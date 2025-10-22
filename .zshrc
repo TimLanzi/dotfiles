@@ -1,5 +1,5 @@
 # Extend PATH
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH:/opt/nvim-linux64/bin
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH:/opt/nvim/bin:/usr/local/go/bin
 
 alias ls='ls --color'
 
@@ -23,10 +23,11 @@ alias nvc='cd $HOME/dotfiles/.config/nvim && vim'
 alias dot='cd $HOME/dotfiles && vim'
 
 # Source fzf (installed from source)
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Shell integrations
-eval "$(fzf --zsh)"
+# eval "$(fzf --zsh)"
+source <(fzf --zsh)
 
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -34,7 +35,7 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 # Download Zinit if it's not there yet
 if [ ! -d "$ZINIT_HOME" ]; then
   mkdir -p "$(dirname $ZINIT_HOME)"
-  git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+  git clone git@github.com:zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
 # Source/load zinit

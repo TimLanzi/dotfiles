@@ -1,1 +1,20 @@
+# source-installed software
 bin/oh-my-posh
+bin/fzf
+
+# .configs that i don't want version-controlled
+.config/act
+.config/com.strapi
+.config/configstore
+.config/gh
+.config/go
+.config/nextjs-nodejs
+.config/payload-nodejs
+.config/turborepo
+.config/yarn
+.config/zed
+
+# manual nvim install file
+nvim-linux-*
+
+
