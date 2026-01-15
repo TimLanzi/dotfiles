@@ -6,7 +6,7 @@ return {
         find_files = {
           hidden = true,
           no_ignore = true,
-          file_ignore_patterns = { ".git", "node_modules" }
+          file_ignore_patterns = { ".git/", "node_modules/", ".next/", "build/", "dist/" }
         },
       }
 
