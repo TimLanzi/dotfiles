@@ -1,0 +1,26 @@
+#!/bin/bash
+
+set -x
+exec >> /tmp/aibox-wake.log 2>&1
+
+MODE=$(cat ~/.config/aibox/mode 2>/dev/null || echo "GAMING")
+[ "$MODE" != "AI" ] && exit 0
+
+sleep 2
+
+export XDG_RUNTIME_DIR=/run/user/$(id -u)
+export WAYLAND_DISPLAY=$(ls "$XDG_RUNTIME_DIR"/wayland-* 2>/dev/null | head -1 | xargs -I{} basename {})
+export DBUS_SESSION_BUS_ADDRESS=unix:path=$XDG_RUNTIME_DIR/bus
+
+qdbus6 org.freedesktop.ScreenSaver /ScreenSaver org.freedesktop.ScreenSaver.SetActive true
+
+# # Wayland — try compositors in order
+# if [ -n "$WAYLAND_DISPLAY" ]; then
+#     hyprctl dispatch dpms off 2>/dev/null && exit 0
+#     swaymsg "output * dpms off" 2>/dev/null && exit 0
+#     kscreen-doctor dpms:off 2>/dev/null && exit 0
+#     wlopm --off '*' 2>/dev/null && exit 0
+# fi
+#
+# # X11 fallback
+# xset dpms force off 2>/dev/null

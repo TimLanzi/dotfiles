@@ -1,0 +1,13 @@
+#!/bin/bash
+set -e
+
+echo "AI > ~/.config/aibox/mode"
+echo AI > ~/.config/aibox/mode
+
+kwriteconfig6 --file ~/.config/powerdevilrc --group AC --group Display --key TurnOffDisplayIdleTimeoutSec 120 --key TurnOffDisplayWhenIdle true
+qdbus6 org.kde.Solid.PowerManagement /org/kde/Solid/PowerManagement org.kde.Solid.PowerManagement.reparseConfiguration
+
+sudo systemctl start docker
+cd ~/docker/llama && docker compose up -d
+
+echo "Mode: AI"
