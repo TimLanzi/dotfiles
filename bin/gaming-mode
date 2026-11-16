@@ -1,0 +1,13 @@
+#!/bin/bash
+set -e
+
+echo GAMING > ~/.config/aibox/mode
+
+kwriteconfig6 --file ~/.config/powerdevilrc --group AC --group Display --key TurnOffDisplayIdleTimeoutSec=-1 --key TurnOffDisplayWhenIdle false
+qdbus6 org.kde.Solid.PowerManagement /org/kde/Solid/PowerManagement org.kde.Solid.PowerManagement.reparseConfiguration
+
+cd ~/docker/llama && docker compose down
+sudo systemctl stop docker
+# sudo nvidia-smi --gpu-reset
+
+echo "Mode: GAMING"
