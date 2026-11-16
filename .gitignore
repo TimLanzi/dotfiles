@@ -4,12 +4,18 @@ bin/fzf
 
 # .configs that i don't want version-controlled
 .config/act
+.config/chromium
 .config/com.strapi
 .config/configstore
+.config/create-next-app-nodejs
+.config/Electron
 .config/gh
 .config/go
+.config/google-chrome-for-testing
+.config/htop
 .config/nextjs-nodejs
 .config/payload-nodejs
+.config/tanstack
 .config/turborepo
 .config/yarn
 .config/zed

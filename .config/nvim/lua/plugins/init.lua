@@ -1,7 +1,7 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
-    opts = function (_, conf)
+    opts = function(_, conf)
       conf.pickers = {
         find_files = {
           hidden = true,
@@ -18,7 +18,7 @@ return {
     "stevearc/conform.nvim",
     -- event = 'BufWritePre', -- uncomment for format on save
     config = function()
-      require "configs.conform"
+      require("conform").setup(require("configs.conform"))
     end,
   },
 

@@ -13,16 +13,17 @@ local options = {
     markdown = { "prettierd", "prettier", stop_after_first = true },
     astro = { "prettierd", "prettier", stop_after_first = true },
     bash = { "beautysh " },
-    yaml = { "yamlfix" },
+    -- yaml = { "yamlfix" },
     toml = { "taplo" },
+    go = { "gofmt" },
   },
 
-  format_on_save = {
-    -- These options will be passed to conform.format()
-    timeout_ms = 500,
-    async = true,
-    lsp_fallback = true,
-  },
+  -- format_on_save = {
+  --   -- These options will be passed to conform.format()
+  --   timeout_ms = 500,
+  --   async = true,
+  --   lsp_fallback = true,
+  -- },
 }
 
 return options

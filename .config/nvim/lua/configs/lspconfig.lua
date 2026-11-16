@@ -8,7 +8,7 @@ require("nvchad.configs.lspconfig").defaults()
 local servers = {
   "html", "cssls", "ts_ls", "bashls", "clangd",
   "cmake", "dockerls", "docker_compose_language_service",
-  "elixirls", "golangci_lint_ls", "graphql", "jsonls",
+  "elixirls", "gopls", "golangci_lint_ls", "graphql", "jsonls",
   "autotools_ls", "nil_ls", "prismals", "pyright",
   "rust_analyzer", "somesass_ls", "tailwindcss", "yamlls"
 }
